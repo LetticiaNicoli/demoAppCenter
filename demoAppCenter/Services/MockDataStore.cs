@@ -14,13 +14,10 @@ namespace demoAppCenter
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
-            };
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Punk IPA", Flavor = "#Hoppy #Fruity" , Brewing = "BrewDog" , Style = "IPA" , Description = "", Rating = 8 },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Heineken", Flavor = "#Light" , Brewing = "Heineken" , Style = "Lager" , Description = "", Rating = 2 },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Petroleum", Flavor = "#Coffee #Strong" , Brewing = "Wals" , Style = "Stout" , Description = "", Rating = 9 },
+             };
 
             foreach (var item in mockItems)
             {

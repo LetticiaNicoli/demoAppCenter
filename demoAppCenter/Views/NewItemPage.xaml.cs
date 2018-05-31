@@ -14,8 +14,12 @@ namespace demoAppCenter
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Text = "Super Bock",
+                Description = "This is an item description.",
+                Brewing = "",
+                Flavor = "#Light",
+                Rating = 2,
+                Style = "Pilsen"
             };
 
             BindingContext = this;

@@ -1,14 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="demoAppCenter.NewItemPage" Title="New Item">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="demoAppCenter.NewItemPage" Title="Nova cerveja">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Save" Clicked="Save_Clicked" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout Spacing="20" Padding="15">
-			<Label Text="Text" FontSize="Medium" />
-			<Entry Text="{Binding Item.Text}" FontSize="Small" />
-			<Label Text="Description" FontSize="Medium" />
-			<Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
-		</StackLayout>
+        <ScrollView>
+    		<StackLayout Spacing="20" Padding="15">
+                
+    			<Label Text="Cerveja" FontSize="Medium" FontAttributes="Bold" />
+    			<Entry Text="{Binding Item.Text}" FontSize="Small" />
+
+                <Label Text="Cervejaria" FontSize="Medium" />
+                <Entry Text="{Binding Item.Brewing}" FontSize="Small" />
+
+                <Label Text="Estilo" FontSize="Medium" />
+                <Picker Title="Estilo" SelectedItem="{Binding Item.Style}">
+                  <Picker.Items>
+                    <x:String>Lager</x:String>
+                    <x:String>Pilsen</x:String>
+                    <x:String>IPA</x:String>
+                    <x:String>Stout</x:String>
+                    <x:String>Barley Wine</x:String>
+                    <x:String>Sour Ale</x:String>
+                  </Picker.Items>
+                </Picker>
+             
+                <Label Text="Nota (0 a 10)" FontSize="Medium" />
+                <Slider Maximum="10" Minimum="1" Value="{Binding Item.Rating}"/>
+
+                <Label Text="Sabor/Aroma" FontSize="Medium" />
+                <Entry Text="{Binding Item.Flavor}" FontSize="Small" />
+                
+                <Label Text="Deixe um comentário" FontSize="Medium" />
+                <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+
+    		</StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

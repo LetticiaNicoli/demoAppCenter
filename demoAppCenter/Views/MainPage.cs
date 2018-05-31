@@ -15,12 +15,12 @@ namespace demoAppCenter
                 case Device.iOS:
                     itemsPage = new NavigationPage(new ItemsPage())
                     {
-                        Title = "Browse"
+                        Title = "Beer"
                     };
 
                     aboutPage = new NavigationPage(new AboutPage())
                     {
-                        Title = "About"
+                        Title = "Cerveja do dia"
                     };
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
@@ -28,12 +28,12 @@ namespace demoAppCenter
                 default:
                     itemsPage = new ItemsPage()
                     {
-                        Title = "Browse"
+                        Title = "Beer"
                     };
 
                     aboutPage = new AboutPage()
                     {
-                        Title = "About"
+                        Title = "Cerveja do dia"
                     };
                     break;
             }

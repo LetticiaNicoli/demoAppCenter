@@ -14,7 +14,7 @@ namespace demoAppCenter
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Check-in";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

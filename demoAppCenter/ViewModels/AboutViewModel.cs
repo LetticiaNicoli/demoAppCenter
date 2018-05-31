@@ -9,7 +9,7 @@ namespace demoAppCenter
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Sugestão do dia";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

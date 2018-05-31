@@ -7,5 +7,9 @@ namespace demoAppCenter
         public string Id { get; set; }
         public string Text { get; set; }
         public string Description { get; set; }
+        public int Rating { get; set; }
+        public string Flavor { get; set; }
+        public string Style { get; set; }
+        public string Brewing { get; set; }
     }
 }
