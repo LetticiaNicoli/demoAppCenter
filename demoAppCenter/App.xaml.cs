@@ -29,7 +29,7 @@ namespace demoAppCenter
         protected override void OnStart()
         {
             base.OnStart();
-            AppCenter.Start("ios=a339f9b1-da0e-4479-b4af-5799f5b50ece;",
+            AppCenter.Start("ios=a339f9b1-da0e-4479-b4af-5799f5b50ece;" + "android=78d64168-7042-4011-8882-89ef3ecbb4be;",
                             typeof(Analytics), typeof(Crashes));
         }
     }
