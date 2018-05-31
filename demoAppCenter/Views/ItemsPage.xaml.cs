@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 
 namespace demoAppCenter
@@ -23,6 +23,11 @@ namespace demoAppCenter
             if (item == null)
                 return;
 
+            Analytics.TrackEvent("Detalhe da cerveja", new Dictionary<string, string> {
+                    { "Nome", item.Text },
+                    { "Nota", item.Rating.ToString()}
+            });
+
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item
@@ -31,6 +36,7 @@ namespace demoAppCenter
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
+            Analytics.TrackEvent("Novo check-in");
             await Navigation.PushAsync(new NewItemPage());
         }
 

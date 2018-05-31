@@ -1,5 +1,7 @@
 ﻿using System;
-
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 
 namespace demoAppCenter
@@ -18,10 +20,17 @@ namespace demoAppCenter
             else
                 DependencyService.Register<CloudDataStore>();
 
-            if (Device.RuntimePlatform == Device.iOS)
+            if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
                 MainPage = new MainPage();
             else
                 MainPage = new NavigationPage(new MainPage());
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            AppCenter.Start("ios=a339f9b1-da0e-4479-b4af-5799f5b50ece;",
+                            typeof(Analytics), typeof(Crashes));
         }
     }
 }

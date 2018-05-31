@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 
 namespace demoAppCenter
@@ -11,9 +11,17 @@ namespace demoAppCenter
         {
             Title = "Sugestão do dia";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenBeerCommand = new Command(() => throw new NotImplementedException());
+
+            OpenWebCommand = new Command(() =>
+            {
+                var ex = new TimeoutException("API demorou para responder");
+                Crashes.TrackError(ex);
+
+            });
         }
 
+        public ICommand OpenBeerCommand { get; }
         public ICommand OpenWebCommand { get; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 
 namespace demoAppCenter
@@ -28,6 +28,7 @@ namespace demoAppCenter
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
+            Analytics.TrackEvent("Check-in realizado");
             await Navigation.PopToRootAsync();
         }
     }

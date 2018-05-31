@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 
 namespace demoAppCenter
@@ -48,6 +48,7 @@ namespace demoAppCenter
         {
             base.OnCurrentPageChanged();
             Title = CurrentPage?.Title ?? string.Empty;
+            Analytics.TrackEvent($"Clicou na tela {Title}");
         }
     }
 }
